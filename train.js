@@ -7,17 +7,17 @@ console.log("Jack Ma  maslahatlari");
 // Funktsiya tuzing
 
 
-function countLetter(letter, text) {
-    let count = 0;
-    for (let i of text) {
-      if (  i == letter) {
-        count++
-      }
-    }
-    return count;
-}
-const result = countLetter("a", "assalomu aleykum");
-console.log(result)
+// function countLetter(letter, text) {
+//     let count = 0;
+//     for (let i of text) {
+//       if (  i == letter) {
+//         count++
+//       }
+//     }
+//     return count;
+// }
+// const result = countLetter("a", "assalomu aleykum");
+// console.log(result)
 
 
 
@@ -108,3 +108,34 @@ console.log(result)
 // }
 
 // run()
+
+
+console.log("EXECUTE");
+//  ⭐️ Asynchronous: CALLBACK, ASYNC && PROMISE
+
+// DEFINE
+
+
+
+
+
+function qoldiqliBolish(a, b, callback) {
+  if (b === 0) {
+    callback("Mahraj nolga teng bololmaydi", null);
+  } else {
+    callback(null, a % b);
+  }
+}
+
+
+qoldiqliBolish(10, 6, (err, data) => {
+  if (err) {
+    console.log("Error:", err);
+  } else {
+    console.log("Data:", data);
+  }
+});
+
+
+
+// CALL
