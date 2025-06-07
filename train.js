@@ -1,6 +1,12 @@
 console.log("Jack Ma  maslahatlari");
 
 
+
+
+
+
+
+
 // Task a
 // Harf sifatida kiritilgan birinchi parametr, 
 // kiritilgan ikkinchi parametr tarkibida nechta ekanligini qaytaruvchi
