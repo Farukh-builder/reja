@@ -1,9 +1,23 @@
 console.log("Jack Ma  maslahatlari");
 
+// B-TASK: 
 
+// Shunday function tuzing, u 1ta string parametrga ega bolsin, hamda osha stringda qatnashgan raqamlarni sonini bizga return qilsin.
 
+// Solution
 
+function countNum(str) {
+    let count = 0;
+    for (let char of str) {
+        if (!isNaN(char) && char >= '0' && char <= '9') {
+            count++;
+        }
+    }
+    return count;
+}
 
+const res = countNum("ad2a54y79wet0sfgb9");
+console.log(res);
 
 
 
@@ -116,7 +130,7 @@ console.log("Jack Ma  maslahatlari");
 // run()
 
 
-console.log("EXECUTE");
+// console.log("EXECUTE");
 //  ⭐️ Asynchronous: CALLBACK, ASYNC && PROMISE
 
 // DEFINE
@@ -125,22 +139,22 @@ console.log("EXECUTE");
 
 
 
-function qoldiqliBolish(a, b, callback) {
-  if (b === 0) {
-    callback("Mahraj nolga teng bololmaydi", null);
-  } else {
-    callback(null, a % b);
-  }
-}
+// function qoldiqliBolish(a, b, callback) {
+//   if (b === 0) {
+//     callback("Mahraj nolga teng bololmaydi", null);
+//   } else {
+//     callback(null, a % b);
+//   }
+// }
 
 
-qoldiqliBolish(10, 6, (err, data) => {
-  if (err) {
-    console.log("Error:", err);
-  } else {
-    console.log("Data:", data);
-  }
-});
+// qoldiqliBolish(10, 6, (err, data) => {
+//   if (err) {
+//     console.log("Error:", err);
+//   } else {
+//     console.log("Data:", data);
+//   }
+// });
 
 
 
