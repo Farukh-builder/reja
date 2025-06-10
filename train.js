@@ -6,18 +6,18 @@ console.log("Jack Ma  maslahatlari");
 
 // Solution
 
-function countNum(str) {
-    let count = 0;
-    for (let char of str) {
-        if (!isNaN(char) && char >= '0' && char <= '9') {
-            count++;
-        }
-    }
-    return count;
-}
+// function countNum(str) {
+//     let count = 0;
+//     for (let i of str) {
+//         if (!isNaN(i) && i >= '0' && i <= '9') {
+//             count++;
+//         }
+//     }
+//     return count;
+// }
 
-const res = countNum("ad2a54y79wet0sfgb9");
-console.log(res);
+// const res = countNum("ad2a54y79wet0sfgb9");
+// console.log(res);
 
 
 
@@ -27,17 +27,17 @@ console.log(res);
 // Funktsiya tuzing
 
 
-// function countLetter(letter, text) {
-//     let count = 0;
-//     for (let i of text) {
-//       if (  i == letter) {
-//         count++
-//       }
-//     }
-//     return count;
-// }
-// const result = countLetter("a", "assalomu aleykum");
-// console.log(result)
+function countLetter(letter, text) {
+    let count = 0;
+    for (let i of text) {
+      if (  i == letter) {
+        count++
+      }
+    }
+    return count;
+}
+const result = countLetter("a", "assalomu aleykum");
+console.log(result)
 
 
 
