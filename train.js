@@ -1,5 +1,77 @@
 console.log("Jack Ma  maslahatlari");
 
+
+
+// Shunday class tuzing tuzing nomi Shop, va uni constructoriga 3 hil mahsulot pass bolsin, hamda classning 3ta methodi bolsin, biri qoldiq, biri sotish va biri qabul. Har bir method ishga tushgan vaqt ham log qilinsin.
+
+// MASALAN: const shop = new Shop(4, 5, 2); shop.qoldiq() return hozir 20:40da 4ta non, 5ta lagmon va 2ta cola mavjud! shop.sotish('non', 3) & shop.qabul('cola', 4) & shop.qoldiq() return hozir 20:50da 1ta non, 5ta lagmon va 6ta cola mavjud!
+
+
+
+
+
+class Shop {
+  constructor(non, lagmon, cola) {
+    this.products = {
+      non: non,
+      lagmon: lagmon,
+      cola: cola
+    };
+  }
+
+  // Hozirgi vaqtni hh:mm formatida olish
+  getTime() {
+    const now = new Date();
+    const hours = now.getHours().toString().padStart(2, '0');
+    const minutes = now.getMinutes().toString().padStart(2, '0');
+    return `${hours}:${minutes}`;
+  }
+
+  // Qoldiq methodi
+  qoldiq() {
+    const time = this.getTime();
+    return `Hozir ${time}da ${this.products.non}ta non, ${this.products.lagmon}ta lagmon va ${this.products.cola}ta cola mavjud!`;
+  }
+
+  // Sotish methodi
+  sotish(mahsulot, soni) {
+    if (this.products[mahsulot] === undefined) {
+      console.log(`Bunday mahsulot mavjud emas.`);
+      return;
+    }
+    if (this.products[mahsulot] < soni) {
+      console.log(`Yetarli ${mahsulot} yo'q!`);
+      return;
+    }
+    this.products[mahsulot] -= soni;
+    const time = this.getTime();
+    console.log(`Hozir ${time}da ${soni}ta ${mahsulot} sotildi.`);
+  }
+
+  // Qabul qilish methodi
+  qabul(mahsulot, soni) {
+    if (this.products[mahsulot] === undefined) {
+      console.log(`Bunday mahsulot mavjud emas.`);
+      return;
+    }
+    this.products[mahsulot] += soni;
+    const time = this.getTime();
+    console.log(`Hozir ${time}da ${soni}ta ${mahsulot} qabul qilindi.`);
+  }
+}
+const shop = new Shop(4, 5, 2);
+
+console.log(shop.qoldiq()); 
+shop.sotish('non', 3);
+shop.qabul('cola', 4);
+console.log(shop.qoldiq());
+
+
+
+
+
+
+
 // B-TASK: 
 
 // Shunday function tuzing, u 1ta string parametrga ega bolsin, hamda osha stringda qatnashgan raqamlarni sonini bizga return qilsin.
@@ -21,141 +93,3 @@ console.log("Jack Ma  maslahatlari");
 
 
 
-// Task a
-// Harf sifatida kiritilgan birinchi parametr, 
-// kiritilgan ikkinchi parametr tarkibida nechta ekanligini qaytaruvchi
-// Funktsiya tuzing
-
-
-function countLetter(letter, text) {
-    let count = 0;
-    for (let i of text) {
-      if (  i == letter) {
-        count++
-      }
-    }
-    return count;
-}
-const result = countLetter("a", "assalomu aleykum");
-console.log(result)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// const list = [
-//     "yaxshi talaba buling", // 0-20
-//     "togri boshliq tanlang va kupriq harakat qiling", // 20-30
-//     "uzingizga ishlashingizni boshlang", // 30-40
-//     "siz kuchli bolgan narslarni qiling", // 40-50
-//     "yoshlarga investitsiya qiling", // 50-60
-//     "endi dam oling", // 60
-// ];
-
-
-// // Callback
-
-// function recommendation(a, callback) {
-//     if (typeof a !== "number") callback("pls insert a number", null);
-//     else if (a <= 20) callback(null, list[0]);
-//     else if (a > 20 && a <= 30) callback(null, list[1]);
-//     else if (a > 30 && a <= 40) callback(null, list[2]);
-//     else if (a > 40 && a <= 50) callback(null, list[3]);
-//     else if (a > 50 && a <= 60) callback(null, list[4]);
-    
-//     else {
-//         setInterval(function () {
-//             callback(null, list[5])
-//         }, 1000)
-//     }
-// }
-
-//  console.log("passed here 0");
-// recommendation(70, (err, data) => {
-//     if (err) console.log("ERROR:", err);
-//     else {
-//         console.log(data);
-//     }
-// })
-
-
-
-// Async functions
-
-// async function recommendation(a, callback) {
-//     if (typeof a !== "number") throw new Error("pls insert a number");
-//     else if (a <= 20) return list[0];
-//     else if (a > 20 && a <= 30) return list[1];
-//     else if (a > 30 && a <= 40) return list[2];
-//     else if (a > 40 && a <= 50) return list[3];
-//     else if (a > 50 && a <= 50) return list[4];
-//     else {
-//         return new Promise((resolve, reject) => {
-//             setInterval(() => {
-//             resolve(list[5]);
-//         }, 1000)
-//         });  
-//     }
-//  }
-
- // then(),  catch()
-//  console.log("passed here 0");
-//  recommendation(20)
-//    .then((data) => {
-//     console.log("response:", data)
-//    }) 
-//    .catch((err) => {
-//     console.log("ERRO:", err)
-//    });
-// console.log("passed here 1")
-
-
-// await
-// async function run() {
-//     let response = await recommendation(65);
-//     console.log(response);
-// }
-
-// run()
-
-
-// console.log("EXECUTE");
-//  ⭐️ Asynchronous: CALLBACK, ASYNC && PROMISE
-
-// DEFINE
-
-
-
-
-
-// function qoldiqliBolish(a, b, callback) {
-//   if (b === 0) {
-//     callback("Mahraj nolga teng bololmaydi", null);
-//   } else {
-//     callback(null, a % b);
-//   }
-// }
-
-
-// qoldiqliBolish(10, 6, (err, data) => {
-//   if (err) {
-//     console.log("Error:", err);
-//   } else {
-//     console.log("Data:", data);
-//   }
-// });
-
-
-
-// CALL

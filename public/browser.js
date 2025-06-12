@@ -1,3 +1,5 @@
+// const { response } = require("./app");
+
 console.log("Frontend Js ishga tushdi");
 
 function itemTemplate(item) {
@@ -13,7 +15,7 @@ function itemTemplate(item) {
               <button  data-id="${item._id}"   class="delete-me btn btn-danger btn-sm">Delete</button>
             </div>
           </li>`;
-}
+} 
 
 let createField = document.getElementById("create-field");
 
@@ -30,4 +32,27 @@ document.getElementById("create-form").addEventListener("submit", function (e) {
     .catch((err) => {
         console.log("Please try again!");
     })
+});
+
+document.addEventListener("click", function (e) {
+  // delete oper
+  console.log(e.target);
+  if (e.target.classList.contains("delete-me")) {
+    if (confirm("Are you sure to delete?")) {
+      axios
+        .post("/delete-item", { id: e.target.getAttribute("data-id") })
+        .then((response) => {
+          console.log(response.data);
+          e.target.parentElement.parentElement.remove();
+        })
+        .catch((err) => {
+          console.log("Please try again later!")
+        });
+    }
+  }
+
+    if (e.target.classList.contains("edit-me")) {
+      alert("You clicked edit button")
+    }
+
 });
