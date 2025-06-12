@@ -19,7 +19,7 @@ class Shop {
     };
   }
 
-  // Hozirgi vaqtni hh:mm formatida olish
+  
   getTime() {
     const now = new Date();
     const hours = now.getHours().toString().padStart(2, '0');
@@ -48,7 +48,7 @@ class Shop {
     console.log(`Hozir ${time}da ${soni}ta ${mahsulot} sotildi.`);
   }
 
-  // Qabul qilish methodi
+ 
   qabul(mahsulot, soni) {
     if (this.products[mahsulot] === undefined) {
       console.log(`Bunday mahsulot mavjud emas.`);
