@@ -1,5 +1,3 @@
-
-
 console.log("Frontend Js ishga tushdi");
 
 function itemTemplate(item) {
