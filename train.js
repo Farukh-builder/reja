@@ -1,4 +1,30 @@
 console.log("Train Js is working");
+// TASK-F
+
+// Yagona string argumentga ega findDoublers nomli function tuzing
+// Agar stringda bittadan ortiq bir xil harflar ishtirok etgan bo'lsa
+// true yokida false natija qaytarsin.
+
+
+function findDouble(str) {
+  for (let i = 0; i < str.length - 1; i++) {
+    if (str[i] === str[i + 1]) {
+      return true;
+    }
+  }
+  return false;
+}
+
+
+console.log(hasDoubleLetter("hello")); 
+
+
+
+
+
+
+
+
 
 // E-TASK: 
 
@@ -7,15 +33,11 @@ console.log("Train Js is working");
 
 // Solution
 
-function reverse(a) {
-      return a.split('').reverse().join('')      
-}
+// function reverse(a) {
+//       return a.split('').reverse().join('')      
+// }
 
-console.log(reverse("Hello"))
-
-
-
-
+// console.log(reverse("Hello"))
 
 
 
